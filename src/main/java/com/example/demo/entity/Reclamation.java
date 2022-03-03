@@ -68,10 +68,10 @@ public class Reclamation implements Serializable{
 	
 	}
 	public Employe getEmployee() {
-		return employee;
+		return employe;
 	}
 	public void setEmployee(Employe employee) {
-		this.employee = employee;
+		this.employe = employee;
 	}
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -85,7 +85,7 @@ public class Reclamation implements Serializable{
 		this.mail = mail;
 		this.date_reclam = date_reclam;
 		
-		this.employee = employee;
+		this.employe = employee;
 	}
 	public Reclamation() {
 		super();
