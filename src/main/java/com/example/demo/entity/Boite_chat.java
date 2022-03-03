@@ -1,11 +1,15 @@
 package com.example.demo.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Boite_chat implements Serializable {
@@ -30,6 +34,8 @@ public class Boite_chat implements Serializable {
 	public void setId_employe2(Integer id_employe2) {
 		this.id_employe2 = id_employe2;
 	}
+	@OneToMany(mappedBy="Boite_chat", fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
+	private List<Reclamation> reclamation;
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
