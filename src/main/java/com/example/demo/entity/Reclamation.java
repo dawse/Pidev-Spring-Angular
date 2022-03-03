@@ -8,8 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 @Entity
@@ -28,8 +27,7 @@ public class Reclamation implements Serializable{
 	private String mail ;
 	@Temporal(TemporalType.DATE)
 	private Date date_reclam ;
-	@Enumerated(EnumType.STRING)
-	private Genre genre;
+	
 	@ManyToOne
 	private Employe employe;
 	public Long getId() {
@@ -67,12 +65,7 @@ public class Reclamation implements Serializable{
 	}
 	public void setDate_reclam(Date date_reclam) {
 		this.date_reclam = date_reclam;
-	}
-	public Genre getGenre() {
-		return genre;
-	}
-	public void setGenre(Genre genre) {
-		this.genre = genre;
+	
 	}
 	public Employe getEmployee() {
 		return employee;
@@ -83,7 +76,7 @@ public class Reclamation implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	public Reclamation(String reclam, String nom, String prenom, String mail, Date date_reclam, Genre genre,
+	public Reclamation(String reclam, String nom, String prenom, String mail, Date date_reclam, 
 			Employe employee) {
 		super();
 		this.reclam = reclam;
@@ -91,7 +84,7 @@ public class Reclamation implements Serializable{
 		this.prenom = prenom;
 		this.mail = mail;
 		this.date_reclam = date_reclam;
-		this.genre = genre;
+		
 		this.employee = employee;
 	}
 	public Reclamation() {
