@@ -30,6 +30,8 @@ public class Reclamation implements Serializable{
 	
 	@ManyToOne
 	private Employe employe;
+	@ManyToOne
+	private Boite_chat Boite_chat;
 	public Long getId() {
 		return id;
 	}
