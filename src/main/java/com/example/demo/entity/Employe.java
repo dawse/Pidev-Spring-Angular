@@ -34,7 +34,7 @@ public class Employe implements Serializable {
 	private String status_civil ;
 	@ManyToOne (cascade = CascadeType.ALL)
 	private String entreprise ;
-	@OneToMany(mappedBy="employe", fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
+	@OneToMany(mappedBy="claimer", fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
 	private List<Reclamation> reclamation;
 	public int getId() {
 		return id;
