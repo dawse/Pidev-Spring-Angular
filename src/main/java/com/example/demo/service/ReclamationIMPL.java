@@ -30,9 +30,8 @@ public class ReclamationIMPL implements IReclamationService{
 
 
 	    
-	
-		@Override
-	public List<Reclamation> listAll() {
+	@Override
+		public List<Reclamation> listAll() {
 		return (List<Reclamation>) reclamrepo.findAll();
 	}
 	
