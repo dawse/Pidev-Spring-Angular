@@ -1,0 +1,41 @@
+<app-navbar1></app-navbar1>
+<app-navbar2></app-navbar2>
+
+<div class="container30">
+  <div class="mtc">
+    <h4>
+      <i class="fa-solid fa-user"></i>
+      Mon Compte
+    </h4>
+  </div>
+  <div>
+    <form name="email" novalidate="" require="" class="moc0">
+      <label class="p8">Modifier email</label>
+      <input type="email" placeholder="Taper votre Email" />
+      <input type="email" placeholder="Taper votre nouveau email" />
+      <input type="submit" value="Enregistrer" />
+    </form>
+  </div>
+  <div class="moc">
+    <label class="p8">Modifier mot de passe</label>
+    <form class="moc1" name="mot de passe">
+      <input type="password" placeholder="mot de passe" />
+      <input type="password" placeholder="nouveau mot de passe" />
+      <input type="submit" value="Enregistrer" />
+    </form>
+  </div>
+
+  <br />
+  <div class="deleteaccount">
+    <a
+      class="default-color"
+      ng-click="displayConfirmation = true"
+      id="delete-account"
+      ><i class="fa fa-trash-o fa-fw"></i> Supprimer mon compte</a
+    >
+  </div>
+</div>
+<div class="clearfix"></div>
+<br />
+<router-outlet></router-outlet>
+<app-footer></app-footer>

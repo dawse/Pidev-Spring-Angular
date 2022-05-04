@@ -1,0 +1,225 @@
+<app-navbar1></app-navbar1>
+<app-navbar2></app-navbar2>
+<router-outlet></router-outlet>
+
+<div id="titlebar" class="single submit-page">
+  <div class="container">
+    <div class="sixteen columns">
+      <h2><i class="fa fa-plus-circle"></i> Ajouter Resume</h2>
+    </div>
+  </div>
+</div>
+
+<!-- Content
+================================================== -->
+<div class="container">
+  <!-- Submit Page -->
+  <div class="sixteen columns">
+    <div class="submit-page">
+      <!-- cv -->
+      <div class="form">
+        <h5>CV</h5>
+        <a href="#" class="button linkedin-btn">Ajouter votre CV </a>
+      </div>
+
+      <div class="form">
+        <h5>Nom et Prénom</h5>
+        <input
+          class="search-field"
+          type="text"
+          placeholder="Nom complet"
+          value=""
+        />
+      </div>
+      <div class="form">
+        <h5>Date de naissance</h5>
+        <input
+          class="search-field"
+          type="text"
+          placeholder="Date  de  naissance"
+          value=""
+        />
+      </div>
+      <div class="form">
+        <h5>Email</h5>
+        <input
+          class="search-field"
+          type="text"
+          placeholder="mail@example.com"
+          value=""
+        />
+      </div>
+
+      <!-- Title -->
+      <div class="form">
+        <h5>Titre Professionelle</h5>
+        <input
+          class="search-field"
+          type="text"
+          placeholder="e.g. Web Developer"
+          value=""
+        />
+      </div>
+
+      <!-- Location -->
+      <div class="form">
+        <h5>Location</h5>
+        <input
+          class="search-field"
+          type="text"
+          placeholder="e.g. London, UK"
+          value=""
+        />
+      </div>
+
+      <!-- Logo -->
+      <div class="form">
+        <h5>Photo</h5>
+        <label class="upload-btn">
+          <input type="file" multiple />
+          <i class="fa fa-upload"></i> Browse
+        </label>
+        <span class="fake-input">No file selected</span>
+      </div>
+
+      <!-- Description -->
+      <div class="form">
+        <h5>À Propos De Moi</h5>
+        <textarea
+          class="WYSIWYG"
+          name="summary"
+          cols="40"
+          rows="3"
+          id="summary"
+          spellcheck="true"
+        ></textarea>
+      </div>
+
+      <!-- Education -->
+      <div class="form with-line">
+        <h5>Education</h5>
+        <div class="form-inside">
+          <!-- Add Education -->
+          <div class="form boxed box-to-clone education-box">
+            <a href="#" class="close-form remove-box button"
+              ><i class="fa fa-close"></i
+            ></a>
+            <input
+              class="search-field"
+              type="text"
+              placeholder="Nom de l'université"
+              value=""
+            />
+            <input
+              class="search-field"
+              type="text"
+              placeholder="Niveau Etudes"
+              value=""
+            />
+            <input
+              class="search-field"
+              type="text"
+              placeholder="diplomes"
+              value=""
+            />
+
+            <textarea
+              name="desc"
+              id="desc"
+              cols="30"
+              rows="10"
+              placeholder="Notes (optional)"
+            ></textarea>
+          </div>
+
+          <a href="#" class="button gray add-education add-box"
+            ><i class="fa fa-plus-circle"></i> Add Education</a
+          >
+        </div>
+      </div>
+
+      <!-- Experience  -->
+      <div class="form with-line">
+        <h5>Experience</h5>
+        <div class="form-inside">
+          <!-- Add Experience -->
+          <div class="form boxed box-to-clone experience-box">
+            <a href="#" class="close-form remove-box button"
+              ><i class="fa fa-close"></i
+            ></a>
+            <input
+              class="search-field"
+              type="text"
+              placeholder="poste recherché"
+              value=""
+            />
+            <input
+              class="search-field"
+              type="text"
+              placeholder="Date    de  debut  et  fin"
+              value=""
+            />
+
+            <textarea
+              name="desc"
+              id="desc"
+              cols="30"
+              rows="10"
+              placeholder="Detailler votre expérience"
+            ></textarea>
+          </div>
+
+          <a href="#" class="button gray add-experience add-box"
+            ><i class="fa fa-plus-circle"></i> Add Experience</a
+          >
+        </div>
+      </div>
+      <div class="form with-line">
+        <h5>Formation</h5>
+        <div class="form-inside">
+          <div class="form boxed box-to-clone education-box">
+            <a href="#" class="close-form remove-box button"
+              ><i class="fa fa-close"></i
+            ></a>
+            <input
+              class="search-field"
+              type="text"
+              placeholder="Certificats"
+              value=""
+            />
+          </div>
+
+          <a href="#" class="button gray add-education add-box"
+            ><i class="fa fa-plus-circle"></i> Add Formation</a
+          >
+        </div>
+      </div>
+      <div class="form with-line">
+        <h5>Langues</h5>
+        <div class="form-inside">
+          <div class="form boxed box-to-clone education-box">
+            <a href="#" class="close-form remove-box button"
+              ><i class="fa fa-close"></i
+            ></a>
+            <input
+              class="search-field"
+              type="text"
+              placeholder="Langues :exemple Langue1/Langue2"
+              value=""
+            />
+          </div>
+
+          <a href="#" class="button gray add-education add-box"
+            ><i class="fa fa-plus-circle"></i> Add Langues</a
+          >
+        </div>
+      </div>
+
+      <div class="divider margin-top-0 padding-reset"></div>
+      <a href="#" class="button big margin-top-5"
+        >Preview <i class="fa fa-arrow-circle-right"></i
+      ></a>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

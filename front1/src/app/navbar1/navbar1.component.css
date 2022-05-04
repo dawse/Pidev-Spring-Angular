@@ -1,0 +1,10 @@
+.navbarbrand{
+
+	display: inline-block;
+	float: left;
+height: 1px;
+width: 2px;
+transform: translateX(- 50 );
+}
+
+
