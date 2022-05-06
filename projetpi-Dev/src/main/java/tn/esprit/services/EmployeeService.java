@@ -6,7 +6,7 @@ public interface EmployeeService {
 	
 	public Employee addemployeeAndAsseignToentreprise(Employee employee, Long entrepriseid);
 
-	Employee modifierEmployee(Long id, Employee e);
+	Employee modifierEmployee( Employee e);
 
 	void deleteEmployee(Long id);
 

@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 
@@ -30,6 +32,35 @@ public class Entreprise implements Serializable {
 	private String categorie;
 	private String adresse;
 	private String contact;
+	private String description;
+	private String image;
+	private String mail;
+	public String getMail() {
+		return mail;
+	}
+
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+
+	public Entreprise(Long id, String nom, String categorie, String adresse, String contact, String description,
+			String image, String mail, List<Employee> employees, Domaineentity domaine) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.categorie = categorie;
+		this.adresse = adresse;
+		this.contact = contact;
+		this.description = description;
+		this.image = image;
+		this.mail = mail;
+		this.employees = employees;
+		Domaine = domaine;
+	}
+
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL , mappedBy="entreprise")
 	private List<Employee> employees;
 	@ManyToOne(cascade = CascadeType.ALL )
@@ -88,7 +119,7 @@ public class Entreprise implements Serializable {
 	public void setEmployees(List<Employee> employees) {
 		this.employees = employees;
 	}
-	
+		
 	public Entreprise(Long id, String nom, String categorie, String adresse, String contact, List<Employee> employees,
 			tn.esprit.entities.Domaine domaine, Profession profession, Domaineentity domaine2) {
 		super();
@@ -99,6 +130,46 @@ public class Entreprise implements Serializable {
 		this.contact = contact;
 		this.employees = employees;
 		Domaine = domaine2;
+	}
+
+
+	public String getDescription() {
+		return description;
+	}
+
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+	public Domaineentity getDomaine() {
+		return Domaine;
+	}
+
+
+	public Entreprise(Long id, String nom, String categorie, String adresse, String contact, String description,
+			String image, List<Employee> employees, Domaineentity domaine) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.categorie = categorie;
+		this.adresse = adresse;
+		this.contact = contact;
+		this.description = description;
+		this.image = image;
+		this.employees = employees;
+		Domaine = domaine;
 	} 
 	
 	

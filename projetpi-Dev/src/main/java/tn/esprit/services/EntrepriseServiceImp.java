@@ -41,14 +41,10 @@ public class EntrepriseServiceImp implements EntrepriseService {
 	}
 
 	@Override
-	public Entreprise modifierEntreprise(Long id, Entreprise e ) {
-		Entreprise e_change = entrepriserepo.findById(id).get();
-		e_change.setAdresse(e.getAdresse());
-		e_change.setCategorie(e.getCategorie());
-		e_change.setContact(e.getContact());
-		e_change.setNom(e.getNom());
-		entrepriserepo.save(e_change);
-		return e; 
+	public Entreprise modifierEntreprise(Entreprise en ) {
+	
+		entrepriserepo.save(en);
+		return en; 
 	}
 	@Override
 	public void deleteEntreprise(Long id) {
@@ -166,7 +162,21 @@ public class EntrepriseServiceImp implements EntrepriseService {
 	    }
 		return emlpf;	
 	}
+	public Long IdentifieEntreprise(Long idemployee)
+	{   
+		Employee e = employeerepo.findById(idemployee).get();
+		Entreprise k =e.getEntreprise();
+		return k.getId();
+		
+	}
 	
+	public List<Entreprise> getentreprises()
+	
+	{     
+	 
+		return (List<Entreprise>) entrepriserepo.findAll();
+		
+	}
 	}
 
 

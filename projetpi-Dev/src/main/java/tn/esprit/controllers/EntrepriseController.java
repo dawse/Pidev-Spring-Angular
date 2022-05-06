@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,8 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.esprit.entities.Domaineentity;
 import tn.esprit.entities.Employee;
 import tn.esprit.entities.Entreprise;
+import tn.esprit.services.EmployeeService;
 import tn.esprit.services.EntrepriseService;
-
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class EntrepriseController {
 	@Autowired 
@@ -31,11 +33,11 @@ public class EntrepriseController {
 		
 	}
 	
-	@PutMapping(value="/updateEntreprise/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value="/updateEntreprise",consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public Entreprise updateEntreprise(@PathVariable Long id , @RequestBody Entreprise entreprise)
+	public Entreprise updateEntreprise( @RequestBody Entreprise entreprise)
 	{
-		entrepriseserv.modifierEntreprise(id,entreprise);
+		entrepriseserv.modifierEntreprise(entreprise);
 		return entreprise;
 	}
 
@@ -46,7 +48,7 @@ public class EntrepriseController {
 	   }
 
 		  @GetMapping("/retrieveEntreprise/{EntrepriseId}")
-		   public Entreprise retrieveClient(@PathVariable("EntrepriseId") Long id) {
+		   public Entreprise retrieveClient1(@PathVariable("EntrepriseId") Long id) {
 			   	return entrepriseserv.retrieveEntreprise(id); 
 		   }
 		
@@ -64,7 +66,16 @@ public class EntrepriseController {
 		public int getNbrEmployee(@PathVariable("idEntreprise") Long idEntreprise){
 			return entrepriseserv.getNbrEmployees(idEntreprise);
 		}
-		
+		@GetMapping("/getEntreprises")
+		@ResponseBody
+		public List<Entreprise> getEntreprises(){
+			return entrepriseserv.getentreprises();
+		}
+		@GetMapping("/getidentreprise/{idemployee}")
+		@ResponseBody
+		public Long getid(@PathVariable("idemployee") Long id){
+			return entrepriseserv.IdentifieEntreprise(id);
+		}
 		
 		@PutMapping(value="/setdomain/{idEntreprise}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	    @ResponseBody
@@ -80,5 +91,6 @@ public class EntrepriseController {
 		{
 			return entrepriseserv.FilterEmployee(critere, identreprise);
 		}
+		
 		
 }

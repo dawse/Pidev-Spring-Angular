@@ -2,6 +2,8 @@ package tn.esprit.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -12,8 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import tn.esprit.entities.Employee;
 
 import tn.esprit.services.EmployeeService;
-
-
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class EmployeeController {
 
@@ -28,20 +29,23 @@ public class EmployeeController {
 	
 	
 	
-	@PutMapping(value="/updateEmployee/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value="/updateEmployee",consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public Employee updateEntreprise(@PathVariable Long id , @RequestBody Employee employee)
+	public Employee updateEntreprise(  @RequestBody Employee employee)
 	{
-		serviceemployee.modifierEmployee(id,employee);
+		serviceemployee.modifierEmployee(employee);
 		return employee;
 	}
+	
+	  
+	   @DeleteMapping("/removeEmployee/{employeeId}")
 
-	 @org.springframework.web.bind.annotation.DeleteMapping("/removeEmployee/{employeeId}")
+	   @ResponseBody
 	   public void removeClient(@PathVariable("employeeId") Long employeeId){
 		 serviceemployee.deleteEmployee(employeeId);
 	   }
 
-		@org.springframework.web.bind.annotation.GetMapping("/retrieveEmployee/{EmployeeId}")
+		@org.springframework.web.bind.annotation.GetMapping("/retemp/{EmployeeId}")
 		   public Employee retrieveClient(@PathVariable("EmployeeId") Long EmployeeId) {
 			   	return serviceemployee.retrieveEmployee(EmployeeId) ;
 		   }

@@ -26,17 +26,9 @@ public class EmployeeServiceImp implements EmployeeService{
 	}
 	
 	@Override
-	public Employee modifierEmployee(Long id, Employee e ) {
-		Employee e_change = employeerepo.findById(id).get();
-		e_change.setAdresse(e.getAdresse());
-		e_change.setAge(e.getAge());
-		e_change.setPrenom(e.getPrenom());
-		e_change.setCin(e.getCin());
-		e_change.setEmail(e.getEmail());
-		e_change.setExperience(e.getExperience());
-		e_change.setTelephone(e.getTelephone());
-		e_change.setNom(e.getNom());
-		employeerepo.save(e_change);
+	public Employee modifierEmployee( Employee e ) {
+	
+		employeerepo.save(e);
 		return e;
 	}
 	@Override

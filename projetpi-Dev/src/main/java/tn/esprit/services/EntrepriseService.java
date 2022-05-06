@@ -8,7 +8,7 @@ import tn.esprit.entities.Entreprise;
 
 public interface EntrepriseService {
 	public Entreprise ajouterEntreprise(Entreprise e);
-	public Entreprise modifierEntreprise(Long id ,Entreprise en) ;
+	public Entreprise modifierEntreprise(Entreprise en) ;
 	void deleteEntreprise(Long id);
 	Entreprise retrieveEntreprise(Long id);
 	public List<Employee> RetreiveEmployee(Long idEntreprise);
@@ -16,4 +16,6 @@ public interface EntrepriseService {
 	public Domaineentity addDomain(Domaineentity domaine);
 	public void setDomain(Long idEntreprise,Domaineentity domain);
 	public List<Employee> FilterEmployee(int critere,Long identreprise);
+	public Long IdentifieEntreprise(Long idemployee);
+	public List<Entreprise> getentreprises();
 }
