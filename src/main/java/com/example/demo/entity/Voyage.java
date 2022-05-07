@@ -12,7 +12,7 @@ import javax.persistence.Id;
 public class Voyage implements Serializable {
 
 	/**
-	 * 
+	 * Hello 
 	 */
 	private static final long serialVersionUID = 154566L;
 	@Id
